@@ -62,6 +62,7 @@ Quick-insert buttons for common SQL clauses:
 
 ---
 
+
 ## 📊 Sample Queries to Try
 
 ### Basic SELECT
@@ -240,15 +241,6 @@ This project is open-source and free to use, modify, and share. No attribution r
 
 ---
 
-## 🚀 Next Steps
-
-1. ✅ Download and extract the ZIP file
-2. ✅ Open `index.html` or run a local server
-3. ✅ Try the sample queries
-4. ✅ Import your own CSV data
-5. ✅ Share with friends and classmates!
-
----
 
 **Happy SQL Learning! 🎉**
 
