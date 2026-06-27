@@ -95,7 +95,7 @@ const TABLES = {
       [10, 'Desk Lamp', 'Furniture', 1800, 90, 'ComfortPlus']
     ]
   },
-
+ 
   orders: {
     label: 'Orders',
     icon: 'ti-shopping-cart',

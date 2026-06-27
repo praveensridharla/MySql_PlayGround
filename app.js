@@ -74,7 +74,6 @@ function renderTableList() {
     el.innerHTML = `
       <i class="ti ${tdef.icon}"></i>
       <span>${tdef.label}</span>
-      <!-- <span class="pg-table-count">${rowCount}</span> -->
     `;
     el.onclick = () => setActiveTable(tname);
     list.appendChild(el);
