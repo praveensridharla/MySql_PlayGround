@@ -1,0 +1,27 @@
+{
+  "name": "mysql-playground",
+  "version": "1.0.0",
+  "description": "Interactive SQL learning environment with sample databases - runs entirely in the browser using SQLite via sql.js",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "http-server"
+  },
+  "keywords": [
+    "sql",
+    "sqlite",
+    "database",
+    "learning",
+    "educational",
+    "web-app",
+    "interactive"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

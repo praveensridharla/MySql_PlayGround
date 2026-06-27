@@ -1,0 +1,11 @@
+student_id,first_name,last_name,email,major,gpa,enrollment_date
+1001,Alice,Williams,alice.w@university.edu,Computer Science,3.92,2022-09-01
+1002,Bob,Brown,bob.b@university.edu,Mathematics,3.45,2022-09-01
+1003,Carol,Davis,carol.d@university.edu,Physics,3.78,2022-09-01
+1004,David,Miller,david.m@university.edu,Chemistry,3.62,2022-09-01
+1005,Emma,Taylor,emma.t@university.edu,Computer Science,3.88,2023-01-15
+1006,Frank,Anderson,frank.a@university.edu,Biology,3.55,2023-01-15
+1007,Grace,Thompson,grace.t@university.edu,English,3.71,2023-01-15
+1008,Henry,Garcia,henry.g@university.edu,Economics,3.49,2023-01-15
+1009,Iris,Martinez,iris.m@university.edu,Computer Science,3.95,2023-09-01
+1010,Jack,Robinson,jack.r@university.edu,Physics,3.58,2023-09-01

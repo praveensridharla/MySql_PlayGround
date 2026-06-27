@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MySQL_PlayGround</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.19.0/iconfont/tabler-icons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="pg-root" id="pgRoot">
+
+    <!-- ── Header ── -->
+    <header class="pg-header">
+      <div class="pg-logo">
+        <div class="pg-logo-icon">
+          <i class="ti ti-database"></i>
+        </div>
+        <div>
+          <div class="pg-title">MySQL_PlayGround</div>
+          <div class="pg-subtitle">Interactive SQL learning environment</div>
+        </div>
+      </div>
+      <div class="pg-badge">
+        <i class="ti ti-circle-check"></i> SQLite engine ready
+      </div>
+    </header>
+
+    <!-- ── Body ── -->
+    <div class="pg-body">
+
+      <!-- Sidebar: table list -->
+      <aside class="pg-sidebar">
+        <div class="pg-sidebar-head">Tables</div>
+        <div class="pg-table-list" id="tableList"></div>
+        <div class="pg-sidebar-footer">
+          <button class="pg-sidebar-btn" onclick="importCSV()" title="Import CSV file as new table">
+            <i class="ti ti-upload"></i> Import CSV
+          </button>
+          <button class="pg-sidebar-btn" onclick="exportTableAsCSV()" title="Export current table as CSV" style="margin-top:6px;">
+            <i class="ti ti-download"></i> Export CSV
+          </button>
+          <button class="pg-sidebar-btn" onclick="showAllTables()" style="margin-top:6px;">
+            <i class="ti ti-layout-list"></i> SHOW TABLES
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main area -->
+      <div class="pg-main">
+
+        <!-- Tab bar -->
+        <div class="pg-tabs">
+          <button class="pg-tab active" onclick="switchTab('query')" id="tab-query">
+            <i class="ti ti-terminal-2"></i> Query
+          </button>
+          <button class="pg-tab" onclick="switchTab('schema')" id="tab-schema">
+            <i class="ti ti-schema"></i> Schema
+          </button>
+          <button class="pg-tab" onclick="switchTab('insert')" id="tab-insert">
+            <i class="ti ti-table-plus"></i> Insert row
+          </button>
+        </div>
+
+        <!-- ── Query pane ── -->
+        <div id="pane-query" class="pg-pane pane-query-layout">
+
+          <div class="pg-editor-area">
+            <div class="pg-editor-label">
+              <i class="ti ti-code"></i> SQL query
+              <span class="pg-kb-hint">Ctrl + Enter to run</span>
+            </div>
+            <div class="pg-editor-wrap">
+              <textarea
+                id="sqlEditor"
+                placeholder="-- Write any SQL here&#10;SELECT * FROM employees LIMIT 10;"
+                spellcheck="false"
+              ></textarea>
+              <div class="pg-editor-toolbar">
+                <span class="pg-snippet" onclick="insertSnippet('SELECT * FROM ')">SELECT *</span>
+                <span class="pg-snippet" onclick="insertSnippet('WHERE ')">WHERE</span>
+                <span class="pg-snippet" onclick="insertSnippet('JOIN ')">JOIN</span>
+                <span class="pg-snippet" onclick="insertSnippet('GROUP BY ')">GROUP BY</span>
+                <span class="pg-snippet" onclick="insertSnippet('ORDER BY ')">ORDER BY</span>
+                <span class="pg-snippet" onclick="insertSnippet('HAVING ')">HAVING</span>
+                <span class="pg-snippet" onclick="insertSnippet('LIMIT ')">LIMIT</span>
+                <span class="pg-snippet">CTRL+ENTER->RUN</span>
+                <button class="pg-clear-btn" onclick="clearEditor()">
+                  <i class="ti ti-x"></i> Clear
+                </button>
+                <button class="pg-run-btn" onclick="runQuery()">
+                  <i class="ti ti-player-play"></i> Run
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="pg-results" id="resultsArea">
+            <div class="pg-empty">
+              <i class="ti ti-terminal"></i>
+              <p>Write a SQL query and press <strong>Run</strong> to see results</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ── Schema pane ── -->
+        <div id="pane-schema" class="pg-pane pane-scroll" style="display:none;">
+          <div id="schemaView" style="padding:12px;"></div>
+        </div>
+
+        <!-- ── Insert pane ── -->
+        <div id="pane-insert" class="pg-pane pane-scroll" style="display:none;">
+          <div class="pg-insert-area" id="insertArea"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="pg-toast" id="toast"></div>
+
+  <!-- sql.js — SQLite compiled to WebAssembly, loaded from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.2/sql-wasm.min.js"></script>
+
+  <!-- App scripts -->
+  <script src="data.js"></script>
+  <script src="compat.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
