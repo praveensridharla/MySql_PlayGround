@@ -95,7 +95,6 @@ const TABLES = {
       [10, 'Desk Lamp', 'Furniture', 1800, 90, 'ComfortPlus']
     ]
   },
- 
   orders: {
     label: 'Orders',
     icon: 'ti-shopping-cart',
@@ -242,6 +241,74 @@ enrollments: {
     [15, 110, 201, 'Semester 7', 'A', 93],
     [16, 110, 202, 'Semester 7', 'A+', 97],
     [17, 110, 203, 'Semester 7', 'A', 91]
+  ]
+},
+sailors: {
+  label: 'Sailors',
+  icon: 'ti-user',
+  cols: [
+    { name: 'sid', type: 'INT', pk: true },
+    { name: 'sname', type: 'VARCHAR(50)', nn: true },
+    { name: 'rating', type: 'INT' },
+    { name: 'age', type: 'DECIMAL(4,1)' }
+  ],
+  rows: [
+    [22, 'Dustin', 7, 45.0],
+    [29, 'Brutus', 1, 33.0],
+    [31, 'Lubber', 8, 55.5],
+    [32, 'Andy', 8, 25.5],
+    [58, 'Rusty', 10, 35.0],
+    [64, 'Horatio', 7, 35.0],
+    [71, 'Zorba', 10, 16.0],
+    [74, 'Horatio', 9, 40.0],
+    [85, 'Art', 3, 25.5],
+    [95, 'Bob', 3, 63.5]
+  ]
+},
+
+boats: {
+  label: 'Boats',
+  icon: 'ti-anchor',
+  cols: [
+    { name: 'bid', type: 'INT', pk: true },
+    { name: 'bname', type: 'VARCHAR(50)', nn: true },
+    { name: 'color', type: 'VARCHAR(20)' }
+  ],
+  rows: [
+    [101, 'Interlake', 'Blue'],
+    [102, 'Clipper', 'Red'],
+    [103, 'Marine', 'Green'],
+    [104, 'Sea Queen', 'Red'],
+    [105, 'Wave Rider', 'Blue'],
+    [106, 'Ocean Star', 'Green']
+  ]
+},
+
+reserves: {
+  label: 'Reserves',
+  icon: 'ti-calendar',
+  cols: [
+    { name: 'rid', type: 'INT', pk: true },
+    { name: 'sid', type: 'INT', fk: 'sailors' },
+    { name: 'bid', type: 'INT', fk: 'boats' },
+    { name: 'day', type: 'DATE' }
+  ],
+  rows: [
+    [1, 22, 101, '2026-06-01'],
+    [2, 22, 102, '2026-06-02'],
+    [3, 29, 103, '2026-06-03'],
+    [4, 31, 102, '2026-06-04'],
+    [5, 32, 104, '2026-06-05'],
+    [6, 58, 101, '2026-06-06'],
+    [7, 58, 105, '2026-06-07'],
+    [8, 64, 106, '2026-06-08'],
+    [9, 71, 104, '2026-06-09'],
+    [10, 74, 102, '2026-06-10'],
+    [11, 85, 103, '2026-06-11'],
+    [12, 95, 105, '2026-06-12'],
+    [13, 22, 104, '2026-06-13'],
+    [14, 31, 106, '2026-06-14'],
+    [15, 74, 101, '2026-06-15']
   ]
 }
 };
